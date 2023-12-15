@@ -1,7 +1,8 @@
 package com.azhai.vo;
 
-import com.sky.entity.OrderDetail;
-import com.sky.entity.Orders;
+
+import com.azhai.entity.OrderDetail;
+import com.azhai.entity.Orders;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

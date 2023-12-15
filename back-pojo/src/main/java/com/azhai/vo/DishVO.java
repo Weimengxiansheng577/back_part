@@ -1,6 +1,6 @@
 package com.azhai.vo;
 
-import com.sky.entity.DishFlavor;
+import com.azhai.entity.DishFlavor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package com.azhai.dto;
 
-import com.sky.entity.OrderDetail;
+import com.azhai.entity.OrderDetail;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -1,6 +1,6 @@
 package com.azhai.dto;
 
-import com.sky.entity.SetmealDish;
+import com.azhai.entity.SetmealDish;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -1,6 +1,6 @@
 package com.azhai.vo;
 
-import com.sky.entity.SetmealDish;
+import com.azhai.entity.SetmealDish;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
