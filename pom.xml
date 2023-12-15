@@ -32,7 +32,7 @@
         <aliyun.sdk.oss>3.17.2</aliyun.sdk.oss>
         <knife4j>3.0.3</knife4j>
         <aspectj>1.9.20</aspectj>
-        <jjwt>0.12.0</jjwt>
+        <jjwt>0.9.1</jjwt>
         <jaxb-api>2.3.1</jaxb-api>
         <poi>5.2.5</poi>
         <wechatpay>0.4.8</wechatpay>
