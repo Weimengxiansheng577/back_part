@@ -1,13 +1,14 @@
 package com.azhai.admin;
 
-import com.sky.constant.JwtClaimsConstant;
-import com.sky.dto.EmployeeLoginDTO;
-import com.sky.entity.Employee;
-import com.sky.properties.JwtProperties;
-import com.sky.result.Result;
-import com.sky.service.EmployeeService;
-import com.sky.utils.JwtUtil;
-import com.sky.vo.EmployeeLoginVO;
+
+import com.azhai.constant.JwtClaimsConstant;
+import com.azhai.dto.EmployeeLoginDTO;
+import com.azhai.entity.Employee;
+import com.azhai.properties.JwtProperties;
+import com.azhai.result.Result;
+import com.azhai.service.EmployeeService;
+import com.azhai.utils.JwtUtil;
+import com.azhai.vo.EmployeeLoginVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,7 +1,8 @@
 package com.azhai.service;
 
-import com.sky.dto.EmployeeLoginDTO;
-import com.sky.entity.Employee;
+
+import com.azhai.dto.EmployeeLoginDTO;
+import com.azhai.entity.Employee;
 
 public interface EmployeeService {
 

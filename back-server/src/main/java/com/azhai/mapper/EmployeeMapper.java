@@ -1,6 +1,6 @@
 package com.azhai.mapper;
 
-import com.sky.entity.Employee;
+import com.azhai.entity.Employee;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

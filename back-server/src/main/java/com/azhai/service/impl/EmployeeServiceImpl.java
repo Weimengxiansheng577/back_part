@@ -1,14 +1,14 @@
 package com.azhai.service.impl;
 
-import com.sky.constant.MessageConstant;
-import com.sky.constant.StatusConstant;
-import com.sky.dto.EmployeeLoginDTO;
-import com.sky.entity.Employee;
-import com.sky.exception.AccountLockedException;
-import com.sky.exception.AccountNotFoundException;
-import com.sky.exception.PasswordErrorException;
-import com.sky.mapper.EmployeeMapper;
-import com.sky.service.EmployeeService;
+import com.azhai.constant.MessageConstant;
+import com.azhai.constant.StatusConstant;
+import com.azhai.dto.EmployeeLoginDTO;
+import com.azhai.entity.Employee;
+import com.azhai.exception.AccountLockedException;
+import com.azhai.exception.AccountNotFoundException;
+import com.azhai.exception.PasswordErrorException;
+import com.azhai.mapper.EmployeeMapper;
+import com.azhai.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

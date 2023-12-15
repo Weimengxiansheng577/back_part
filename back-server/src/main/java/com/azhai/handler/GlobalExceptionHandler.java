@@ -1,7 +1,7 @@
 package com.azhai.handler;
 
-import com.sky.exception.BaseException;
-import com.sky.result.Result;
+import com.azhai.exception.BaseException;
+import com.azhai.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
