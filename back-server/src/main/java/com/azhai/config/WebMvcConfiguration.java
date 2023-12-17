@@ -1,12 +1,17 @@
 package com.azhai.config;
 
 import com.azhai.interceptor.JwtTokenAdminInterceptor;
+import com.azhai.json.JacksonObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.cbor.MappingJackson2CborHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+
+import java.util.List;
 
 
 /**
@@ -63,5 +68,22 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         log.info("设置静态资源映射");
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+    
+    /**
+     * @description: 统一信息管理
+     * @author azhai
+     * @date 2023/12/18 4:56
+     * @version 1.0
+     */
+    @Override
+    protected void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        log.info("扩展消息转换器...");
+        //创建一个消息转换器对象
+        MappingJackson2CborHttpMessageConverter converter = new MappingJackson2CborHttpMessageConverter();
+        //设置对象转换器
+        converter.setObjectMapper(new JacksonObjectMapper());
+        //把转换器加到容器中
+        converters.add(0,converter);
     }
 }

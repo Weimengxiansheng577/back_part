@@ -6,18 +6,23 @@ import com.azhai.constant.StatusConstant;
 import com.azhai.context.BaseContext;
 import com.azhai.dto.EmployeeDTO;
 import com.azhai.dto.EmployeeLoginDTO;
+import com.azhai.dto.EmployeePageQueryDTO;
 import com.azhai.entity.Employee;
 import com.azhai.exception.AccountLockedException;
 import com.azhai.exception.AccountNotFoundException;
 import com.azhai.exception.PasswordErrorException;
 import com.azhai.mapper.EmployeeMapper;
+import com.azhai.result.PageResult;
 import com.azhai.service.EmployeeService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -84,6 +89,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         employeeMapper.insert(employee);
 
+    }
+
+
+    public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
+        PageHelper.startPage(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
+        Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
+        long total = page.getTotal();
+        List<Employee> result = page.getResult();
+        return new PageResult(total,result);
     }
 
 }

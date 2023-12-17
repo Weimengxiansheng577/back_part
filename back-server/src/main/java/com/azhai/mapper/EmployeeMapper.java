@@ -1,6 +1,8 @@
 package com.azhai.mapper;
 
+import com.azhai.dto.EmployeePageQueryDTO;
 import com.azhai.entity.Employee;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -26,4 +28,12 @@ public interface EmployeeMapper {
             "VALUES " +
             "(#{name},#{username},#{password},#{phone},#{sex},#{idNumber},#{status},#{createTime},#{updateTime},#{createUser},#{updateUser})")
     void insert(Employee employee);
+
+    /**
+     * @description: 分页查询方法
+     * @author Administrator
+     * @date 2023/12/18 3:36
+     * @version 1.0
+     */
+    Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }

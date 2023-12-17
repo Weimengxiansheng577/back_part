@@ -3,7 +3,9 @@ package com.azhai.service;
 
 import com.azhai.dto.EmployeeDTO;
 import com.azhai.dto.EmployeeLoginDTO;
+import com.azhai.dto.EmployeePageQueryDTO;
 import com.azhai.entity.Employee;
+import com.azhai.result.PageResult;
 
 public interface EmployeeService {
 
@@ -22,4 +24,11 @@ public interface EmployeeService {
      */
     void save(EmployeeDTO employeeDTO);
 
+    /**
+     * @description: 扩展分页查询方法
+     * @author Administrator
+     * @date 2023/12/18 3:21
+     * @version 1.0
+     */
+    PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }

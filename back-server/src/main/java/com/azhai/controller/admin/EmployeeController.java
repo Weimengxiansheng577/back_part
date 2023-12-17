@@ -4,8 +4,10 @@ package com.azhai.controller.admin;
 import com.azhai.constant.JwtClaimsConstant;
 import com.azhai.dto.EmployeeDTO;
 import com.azhai.dto.EmployeeLoginDTO;
+import com.azhai.dto.EmployeePageQueryDTO;
 import com.azhai.entity.Employee;
 import com.azhai.properties.JwtProperties;
+import com.azhai.result.PageResult;
 import com.azhai.result.Result;
 import com.azhai.service.EmployeeService;
 import com.azhai.utils.JwtUtil;
@@ -14,10 +16,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -89,6 +88,15 @@ public class EmployeeController {
         log.info("新增员工",employeeDTO);
         employeeService.save(employeeDTO);
         return Result.success();
+    }
+
+
+    @GetMapping("/page")
+    @ApiOperation("员工分页查询")
+    public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO){
+        log.info(employeePageQueryDTO.toString());
+        PageResult pageResult = employeeService.pageQuery(employeePageQueryDTO);
+        return Result.success(pageResult);
     }
 
 }
