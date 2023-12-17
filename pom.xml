@@ -27,10 +27,10 @@
         <lombok>1.18.30</lombok>
         <fastjson>2.0.42</fastjson>
         <commons.lang>2.6</commons.lang>
+        <knife4j.version>4.2.0</knife4j.version>
         <druid>1.2.20</druid>
         <pagehelper>2.0.0</pagehelper>
         <aliyun.sdk.oss>3.17.2</aliyun.sdk.oss>
-        <knife4j>3.0.3</knife4j>
         <aspectj>1.9.20</aspectj>
         <jjwt>0.9.1</jjwt>
         <jaxb-api>2.3.1</jaxb-api>
@@ -72,8 +72,8 @@
             </dependency>
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-spring-boot-starter</artifactId>
-                <version>${knife4j}</version>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.aspectj</groupId>

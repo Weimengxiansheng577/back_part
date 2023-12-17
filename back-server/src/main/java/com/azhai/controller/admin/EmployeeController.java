@@ -1,7 +1,8 @@
-package com.azhai.admin;
+package com.azhai.controller.admin;
 
 
 import com.azhai.constant.JwtClaimsConstant;
+import com.azhai.dto.EmployeeDTO;
 import com.azhai.dto.EmployeeLoginDTO;
 import com.azhai.entity.Employee;
 import com.azhai.properties.JwtProperties;
@@ -9,6 +10,8 @@ import com.azhai.result.Result;
 import com.azhai.service.EmployeeService;
 import com.azhai.utils.JwtUtil;
 import com.azhai.vo.EmployeeLoginVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +28,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/admin/employee")
 @Slf4j
+@Api(tags = "员工相关的接口")
 public class EmployeeController {
 
     @Autowired
@@ -39,9 +43,9 @@ public class EmployeeController {
      * @return
      */
     @PostMapping("/login")
+    @ApiOperation(value = "员工的登录方法")
     public Result<EmployeeLoginVO> login(@RequestBody EmployeeLoginDTO employeeLoginDTO) {
         log.info("员工登录：{}", employeeLoginDTO);
-
         Employee employee = employeeService.login(employeeLoginDTO);
 
         //登录成功后，生成jwt令牌
@@ -68,7 +72,22 @@ public class EmployeeController {
      * @return
      */
     @PostMapping("/logout")
+    @ApiOperation(value = "退出登录的方法")
     public Result<String> logout() {
+        return Result.success();
+    }
+
+    /**
+     * @description: 新增员工
+     * @author azhai
+     * @date 2023/12/17 16:22
+     * @version 1.0
+     */
+    @PostMapping
+    @ApiOperation(value = "新增员工")
+    public Result save(@RequestBody EmployeeDTO employeeDTO){
+        log.info("新增员工",employeeDTO);
+        employeeService.save(employeeDTO);
         return Result.success();
     }
 
