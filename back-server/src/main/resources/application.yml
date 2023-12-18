@@ -21,23 +21,24 @@ spring:
     cache: false    #页面不加载缓存，修改即时生效
 #官方文档说是这样配置，配置不生效
 # springdoc-openapi项目配置
-#springdoc:
-#  swagger-ui:
-#    path: /swagger-ui.html
-#    tags-sorter: alpha
-#    operations-sorter: alpha
-#  api-docs:
-#    path: /v3/api-docs
-#  group-configs:
-#    - group: 'default'
-#      paths-to-match: '/**'
-#      # 注意包路径分割符是点，直接在IDEA中copy的路径是斜杠会导致配置不生效
-#      packages-to-scan: com.azhai.controller.admin
-## knife4j的增强配置，不需要增强可以不配
-#knife4j:
-#  enable: true
-#  setting:
-#    language: zh_cn
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      # 注意包路径分割符是点，直接在IDEA中copy的路径是斜杠会导致配置不生效
+      packages-to-scan: com.azhai.controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml
